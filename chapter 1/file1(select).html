@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<head>
+    <h1>file 1</h1>
+</head>
+
+<body>
+    <p>this is section 1 using if/else</p>
+    <select> please choose an option
+        <option value="option1">rice</option>
+        <option value="option2">bread</option>
+        <option value="option3">soup</option>
+    </select> <br />
+
+    <script>
+         
+        const select = document.querySelector("select")  //querySelector - selecting the segments
+        const paragraph = document.querySelector("p")
+
+        select.addEventListener("change", function1)  // addEventListener - adding options to an event and binding a function
+
+        function function1 () {
+            const check = select.value  // getting output value of select
+
+            if(check === "option1"){
+                paragraph.textContent = "you have chosen rice"   //textcontent - changing context of paragraphs.
+            }else if(check === "option2"){
+                paragraph.textContent = "you have chosen bread"
+            }else{
+                paragraph.textContent = "you have chosen soup"
+            }
+        }
+
+        {/* switch 
+        const paragraph = document.querySelector("p")
+        const select = document.querySelector("select")
+
+        select.addEventListener("change", getchangedvalue)
+
+        function getchangedvalue() {
+            const value = select.value
+
+            switch (value) {
+                case "option1":
+                    paragraph.textContent = "you selected option 1"
+                    break;
+                case "option2":
+                    paragraph.textContent = "you selected option 2"
+                    break;
+                case "option3":
+                    paragraph.textContent = "you selected option 3"
+                    break;
+                default :
+                    paragraph.textContent = "nothing"
+            }
+        }
+    */}
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<h1>changing colors with body: </h1>
+
+<body>
+    <select>select theme
+        <option value="black">black theme</option>
+        <option value="white">white theme</option>
+    </select>
+    <p>hello world</p>
+</body>
+<script>
+    const select = document.querySelector("select")
+    const html = document.querySelector("html")
+
+    function update(bgcolor, textcolor) {
+        html.style.backgroundColor = bgcolor
+        html.style.color = textcolor
+    }
+
+    select.addEventListener("change", () =>
+        select.value === "black"
+            ? update("black", "white")
+            : update("white", "black")
+    )
+
+</script>
+
+</html>

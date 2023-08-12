@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<h1>The Month</h1>
+
+<body>
+    <select>
+        <option value="january">JAN</option>
+        <option value="february">FEB</option>
+        <option value="march">MAR</option>
+        <option value="april">APR</option>
+    </select>
+    <ul></ul>
+    <script>
+        const header = document.querySelector("h1")
+        const select = document.querySelector("select")
+
+
+
+        //create calender function : 
+
+        /*
+        function changeheader(){
+            const value = select.value
+            value === "january" 
+            ?header.textContent = "January"
+            :header.textContent = "February"
+        } */
+
+        const list = document.querySelector("ul") //the calender unordered list
+
+
+
+        select.addEventListener("change", () => {
+            const choice = select.value
+            switch (choice) {
+                case "january":
+                    createcalender(31, "january")
+                    break;
+                case "february":
+                    createcalender(28, "february")
+                    break;
+                case "march":
+                    createcalender(31, "march")
+                    break;
+                case "april":
+                    createcalender(30, "april")
+                    break;
+                default:
+                    createcalender(0, "NAN")
+
+            }
+        })
+
+        function createcalender(days, choice) {
+            header.textContent = choice
+            list.innerHTML = ''
+            for (i = 0; i < days; i++) {
+                const listitem = document.createElement("li")
+                listitem.textContent = i
+                list.appendChild(listitem)
+            }
+        }
+
+    </script>
+</body>
+
+</html>
