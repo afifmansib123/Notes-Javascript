@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<header>
+    <h1>CANVAS BASIC FILE</h1>
+</header>
+<body>
+    <!---we will first declare the canvas-->
+    <canvas id="canvas" width="150" height="150" style="border: 3px solid black;"></canvas>
+
+    </canvas>
+    <script>
+
+        function draw(){
+       //now we will target the canvas first
+       const canvas = document.getElementById("canvas")
+       if(canvas.getContext){ //this is by default to get the context
+            const ctx = canvas.getContext("2d") //targeting the whole area
+
+
+            //filling 1st rectangle with (x,y,width,height)
+            ctx.fillStyle = ("rgb(200, 0, 0)")
+            ctx.fillRect(10,10,50,50)
+
+
+            //filling second area with (x,y,width,height)
+            ctx.fillStyle = ("rgb(200, 0, 0, .5)")
+            ctx.fillRect(20,20,50,50)
+            }
+    }
+    draw()
+    </script>
+</body>
+</html>

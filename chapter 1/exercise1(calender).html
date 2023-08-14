@@ -2,38 +2,27 @@
 <h1>The Month</h1>
 
 <body>
-    <select>
+    <select>  <!---creating the select option to select from-->
         <option value="january">JAN</option>
         <option value="february">FEB</option>
         <option value="march">MAR</option>
         <option value="april">APR</option>
     </select>
-    <ul></ul>
+    <ul></ul> <!---The unordered list where we will keep the days-->
     <script>
-        const header = document.querySelector("h1")
-        const select = document.querySelector("select")
+        const header = document.querySelector("h1") //querySelector to target the head
+        const select = document.querySelector("select") //querySelector to find the value of select option
+
+
+        const list = document.querySelector("ul") //the calender unordered list to keep days
 
 
 
-        //create calender function : 
-
-        /*
-        function changeheader(){
-            const value = select.value
-            value === "january" 
-            ?header.textContent = "January"
-            :header.textContent = "February"
-        } */
-
-        const list = document.querySelector("ul") //the calender unordered list
-
-
-
-        select.addEventListener("change", () => {
-            const choice = select.value
+        select.addEventListener("change", () => {  // addEventlistener to create an event at SELECT change
+            const choice = select.value  //getting the select value from select operation
             switch (choice) {
                 case "january":
-                    createcalender(31, "january")
+                    createcalender(31, "january")  //calling the function to create days for each month
                     break;
                 case "february":
                     createcalender(28, "february")
@@ -50,13 +39,13 @@
             }
         })
 
-        function createcalender(days, choice) {
+        function createcalender(days, choice) { //creating function for months as to days.
             header.textContent = choice
             list.innerHTML = ''
             for (i = 0; i < days; i++) {
-                const listitem = document.createElement("li")
+                const listitem = document.createElement("li") //createelement to create days.
                 listitem.textContent = i
-                list.appendChild(listitem)
+                list.appendChild(listitem) //appendChild to add the days to the empty list
             }
         }
 

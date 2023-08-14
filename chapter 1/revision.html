@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<h1>CAR MODEL</h1>
+<body>
+    <p1>brand</p1>
+    <p2>manufacture year</p2>
+
+    <select>Select Brand
+        <option value="honda">Honda</option>
+        <option value="mazda">Mazda</option>
+        <option value = "toyota">Toyota</option>
+    </select>
+    <script>
+        const header = document.querySelector("h1")
+        const select = document.querySelector("select")
+
+        const myfunc = (brand,year) => {
+            const p1=document.querySelector("p1")
+            const p2=document.querySelector("p2")
+
+            p1.textContent = brand
+            p2.textContent = year
+        }
+
+        
+        select.addEventListener("change", (brand,year)=>{
+            const value = select.value
+            header.textContent = value
+
+            switch(value){
+                case "mazda":
+                    myfunc("mymodel001", "2003")
+                    break;
+                    case "honda":
+                    myfunc("mymodel009", "2010")
+                    break;
+                    case "toyota":
+                    myfunc("mymodelnoname", "2010")
+                    break;
+                default:
+                    myfunc("mymodel2005", "2040")
+            }
+        })
+
+        
+    </script>
+</body>
+</html>
