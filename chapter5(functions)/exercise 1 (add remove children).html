@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<body>
+    <button>CLICK</button>
+
+    <script>
+     function messagebox(){
+        const body = document.body
+
+        const panel = document.createElement("div")
+        body.appendChild(panel)
+
+        const message = document.createElement("p")
+        message.textContent = "this is a message"
+        panel.appendChild(message)
+
+        const close = document.createElement("button")
+        close.textContent = "X"
+        panel.appendChild(close)
+
+        close.addEventListener("click", ()=>{
+            body.removeChild(panel)
+        })
+     }
+
+     const button = document.querySelector("button")
+     button.addEventListener("click", messagebox)
+    </script>
+</body>
+</html>

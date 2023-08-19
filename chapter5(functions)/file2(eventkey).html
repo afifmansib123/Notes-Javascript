@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<body>
+<input  type="text" />
+<p></p>
+<script>
+const textBox = document.querySelector("input")
+const output = document.querySelector("p");
+
+textBox.addEventListener("keydown", (event) => {
+  output.textContent = event.key
+})
+</script>
+</body>
+</html>

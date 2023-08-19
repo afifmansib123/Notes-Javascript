@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <h1>search box</h1>
+</head>
+<body>
+
+    <input placeholder="searchh name">
+    </input><button>search</button>
+    <p></p>
+
+<script>
+    
+
+    const contacts = [
+        "zian-512462",
+        "afif-231451",
+        "leo-132456"
+    ]
+
+    const input = document.querySelector("input")
+    const paragraph = document.querySelector("p")
+    const button = document.querySelector("button")
+
+   
+    
+    button.addEventListener("click",()=>{
+        let inputvalue = input.value
+        let x = "nothing"
+        for (const individual of contacts){
+            const newstrings = individual.split("-")
+            if(newstrings[0] === inputvalue){
+                paragraph.textContent = newstrings[1]
+                break;
+            }
+        }
+    })
+        
+    if(paragraph.textContent === ""){
+        paragraph.textContent = "nothing"
+    }
+</script>
+</body>
+<html>

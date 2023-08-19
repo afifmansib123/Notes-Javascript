@@ -5,3 +5,4 @@ for(i =0; i<10 ; i++){
 const myarray2 = myarray1.map((x)=>x<.5?"small":"big")
 console.log(myarray1)
 console.log(myarray2)
+

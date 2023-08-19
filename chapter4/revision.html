@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <label>search the name you want</label>
+    <input/><button>search</button>
+    <p></p>
+    <p1></p1>
+</head>
+<script>
+    const myarray = ["hello","to","the","new"]
+    const names = [
+        "zian-123456",
+        "afif-2234560",
+        "ken-2342563"
+    ]
+    const para = document.querySelector("p")
+    const input = document.querySelector("input")
+    const button = document.querySelector("button")
+
+    button.addEventListener("click", ()=>{
+        let value = input.value
+        
+        for(x of names){
+            let every = x.split("-")
+            if(every[0] === value){
+                para.textContent = every[1]
+            }else{
+                para.textContent = "nothing"
+            }
+        }
+    })
+</script>
+</html>
