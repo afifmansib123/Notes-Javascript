@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<body>
+<button>change color</button>
+<script>
+    const button = document.querySelector("button")
+
+    function randomgenerator(num){
+        return Math.floor(Math.random() * num-2)
+    }
+
+    button.addEventListener("click", ()=>{
+        const randomcolor = `rgb(${randomgenerator(255)},${randomgenerator(255)},${randomgenerator(255)})`
+        document.body.style.backgroundColor = randomcolor
+
+        
+    },
+    )
+    //click
+    //focus
+    //blur
+    //dblclick
+    //mouseover
+    //mouseout
+    // abort signal : { signal: controller.signal }
+</script>
+</body>
+</html>

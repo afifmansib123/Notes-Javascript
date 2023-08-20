@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<body>
+<form>
+    <p></p>
+    <div>
+        <label>name</label>
+        <input id="input1">
+    </div>
+
+    <div>
+        <label>phone</label>
+        <input id="input2">
+    </div>
+
+    <div>
+        <button type="submit">submit</button>
+    </div>
+</form>
+<script>
+    const name = document.getElementById("input1")
+    const phone = document.getElementById("input2")
+    const para = document.querySelector("p")
+    const form = document.querySelector("form")
+
+
+    
+    form.addEventListener("submit", (e)=>{
+        e.preventDefault()
+        para.innerText = `${name.value}${phone.value}`
+        if(name.value === '' || phone.value === ''){
+            e.preventDefault()
+            para.innerText = "dhur bainchod"
+        }
+    })
+</script>
+</body>
+</html>

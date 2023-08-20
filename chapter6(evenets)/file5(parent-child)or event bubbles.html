@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<body>
+<div id="div1">
+    <button>click me</button>
+</div>
+<div id="output">
+
+</div>
+<script>
+
+    //these 3 next files are gonna be
+    //who fires first. the elsement iside the page.
+
+    //this is called a events bubble.
+    //this nesting is done from parent to child
+    //bigger to smaller elements
+
+    const output = document.getElementById("output")
+
+    function handleclick(e){
+        output.textContent += `you clicked on a ${e.currentTarget.tagName} element`
+    }
+
+
+    //parent of div
+    const page = document.body
+    page.addEventListener("click", handleclick)
+
+
+    //parent of button
+    const container = document.getElementById("div1")
+    container.addEventListener("click", handleclick)
+
+    //child of div
+    const button  = document.querySelector("button")
+    button.addEventListener("click", handleclick)
+
+</script>
+</body>
+</html>
