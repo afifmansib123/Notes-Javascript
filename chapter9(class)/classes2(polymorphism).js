@@ -37,4 +37,5 @@ class professor extends person{
 const Teacher1 = new professor("dobri",50,"male","physics",25000)
 //we're calling the function defined inside the child class
 Teacher1.introduceprofessor()
+//but we can call the function inside the parent class as well.
 Teacher1.printIdentity()

@@ -36,20 +36,3 @@ const group1 = {
     ]
   }
 
-  console.log(group1["homeTown"])
-  //check members
-  console.log(group1["members"][2])
-  //check member's property 
-  console.log(group1["members"][2]["powers"][2])
-
-  async function populate() {
-    const requestURL =
-      "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
-    const request = new Request(requestURL);
-  
-    const response = await fetch(request);
-    const superHeroes = await response.json();
-    console.log(superHeroes)
-  }
-
-populate()
