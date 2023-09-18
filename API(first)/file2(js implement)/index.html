@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<h1>js implemented aaudio</h1>
+
+<body>
+    <audio src = "test.mp3"></audio>
+    <button class="paused">play</button>
+
+    <!--LOOK HOW WE SET UP THE RANGE FOR THE AUDIO CONTROLLER-->
+    <input type="range" min="0" max="1" step=".2" class="volume" value="1" class="volume"></input>
+
+<script>
+    
+    // these are for creating the audio context by default 
+    const AudioContext = window.AudioContext || window.webkitAudioContext
+    const audioCtx = new AudioContext()
+
+    //now create the elemnts
+    const audiofile = document.querySelector("audio")
+    const playbutton = document.querySelector("button")
+    const volumebutton = document.querySelector(".volume") //see with the .dot we target the element by class
+
+    //create the media element to manipulate
+    const audiosource = audioCtx.createMediaElementSource(audiofile)
+
+    //what happens at play button
+    playbutton.addEventListener("click", ()=>{
+        if(audioCtx.state === "suspended"){
+            audioCtx.resume()
+        }
+        //as of default we set it to pause, now play if the button is pressed.
+        if(playbutton.getAttribute("class") === "paused"){
+            audiofile.play()
+            //set the class to play now as of the change
+            playbutton.setAttribute("class", "playing")
+            //and change whats displayed as well to pause
+            playbutton.textContent = "pause"
+        }else if(playbutton.getAttribute("class") === "playing"){
+            audiofile.pause()
+            playbutton.setAttribute("class", "paused")
+            playbutton.textContent = "play"
+        }
+    })
+
+
+    //when the audio file stops playing
+    audiofile.addEventListener("ended", ()=>{
+        playbutton.setAttribute("class", "paused")
+        playbutton.textContent = "play"
+    })
+
+    //the volume
+    const gainnode = audioCtx.createGain()
+    volumebutton.addEventListener("input", ()=>{
+        gainnode.gain.value = volumebutton.value //we get the value set from the volume button and set it to thi attribute.
+    })
+
+    audiosource.connect(gainnode).connect(audioCtx.destination)
+
+</script>
+</body>
+</html>
