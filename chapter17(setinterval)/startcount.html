@@ -1,0 +1,20 @@
+<body>
+    <p id="timer"></p>
+    <button>start</button>
+    <script>
+        let couter = 60
+        let button = document.querySelector("button")
+        let timer = document.getElementById("timer")
+
+
+
+        button.onclick = () => {
+            let intervalvar;
+            intervalvar = setInterval(() => {
+                couter--
+                timer.textContent = couter
+            }, 1000)
+
+        }
+    </script>
+</body>
