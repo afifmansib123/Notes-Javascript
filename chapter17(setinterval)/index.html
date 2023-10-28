@@ -1,0 +1,32 @@
+<div id="my_box">
+    <h3>Hello World</h3>
+</div>
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+<style>
+    .go {
+        color: green;
+    }
+
+    .stop {
+        color: red;
+    }
+</style>
+<script>
+    let variableforinterval
+
+    function changecoloe() {
+        if (!variableforinterval) {
+            variableforinterval = setInterval(() => {
+                const targetelement = document.getElementById("my_box")
+                targetelement.className = targetelement.className === "go" ? "stop" : "go"
+            }, 1000);
+        }
+    }
+    function stopcolor() {
+        clearInterval(variableforinterval)
+        variableforinterval = null
+    }
+    document.getElementById("start").addEventListener("click", changecoloe);
+    document.getElementById("stop").addEventListener("click", stopcolor);
+</script>
